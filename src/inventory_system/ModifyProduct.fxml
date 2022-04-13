@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="495.0" prefWidth="895.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.ModifyProductController">
+   <children>
+      <VBox layoutX="38.0" layoutY="130.0" prefHeight="256.0" prefWidth="257.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="257.0">
+               <children>
+                  <Label prefHeight="16.0" prefWidth="87.0" text="ID">
+                     <font>
+                        <Font name="Mongolian Baiti" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="partIDField" maxWidth="150.0" prefWidth="150.0" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Mongolian Baiti" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="257.0">
+               <children>
+                  <Label prefHeight="16.0" prefWidth="90.0" text="Name">
+                     <font>
+                        <Font name="Mongolian Baiti" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nameField" maxWidth="150.0" prefWidth="150.0" promptText="Product Name" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Mongolian Baiti" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="257.0">
+               <children>
+                  <Label prefHeight="16.0" prefWidth="90.0" text="Inv">
+                     <font>
+                        <Font name="Mongolian Baiti" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="inventoryField" maxWidth="150.0" prefWidth="150.0" promptText="Inventory" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Mongolian Baiti" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="257.0">
+               <children>
+                  <Label prefHeight="16.0" prefWidth="92.0" text="Price">
+                     <font>
+                        <Font name="Mongolian Baiti" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="priceField" maxWidth="150.0" prefWidth="150.0" promptText="Price/cost" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Mongolian Baiti" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" maxWidth="292.0" prefHeight="40.0" prefWidth="261.0">
+               <children>
+                  <Label prefHeight="16.0" prefWidth="38.0" text="Max">
+                     <font>
+                        <Font name="Mongolian Baiti" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="maxField" maxWidth="82.0" prefHeight="26.0" prefWidth="82.0" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font name="Mongolian Baiti" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Label prefHeight="16.0" prefWidth="35.0" text="Min">
+                     <font>
+                        <Font name="Mongolian Baiti" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="minField" maxWidth="85.0" prefHeight="26.0" prefWidth="81.0">
+                     <font>
+                        <Font name="Mongolian Baiti" size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="257.0" />
+         </children>
+      </VBox>
+      <TableView fx:id="partsTable" layoutX="378.0" layoutY="89.0" prefHeight="135.0" prefWidth="442.0">
+        <columns>
+          <TableColumn fx:id="partIDColumn" prefWidth="106.0" text="Part ID" />
+          <TableColumn fx:id="partNameColumn" prefWidth="105.0" text="Part Name" />
+            <TableColumn fx:id="inventoryColumn" prefWidth="101.0" text="Inventory Level" />
+            <TableColumn fx:id="priceColumn" minWidth="0.0" prefWidth="129.0" text="Price per unit" />
+        </columns>
+      </TableView>
+      <TableView fx:id="productPartsTable" layoutX="378.0" layoutY="270.0" prefHeight="135.0" prefWidth="442.0">
+         <columns>
+            <TableColumn fx:id="partIDColumn2" prefWidth="106.0" text="Part ID" />
+            <TableColumn fx:id="partNameColumn2" prefWidth="105.0" text="Part Name" />
+            <TableColumn fx:id="inventoryColumn2" prefWidth="101.0" text="Inventory Level" />
+            <TableColumn fx:id="priceColumn2" minWidth="0.0" prefWidth="129.0" text="Price per unit" />
+         </columns>
+      </TableView>
+      <TextField fx:id="searchPart" layoutX="448.0" layoutY="53.0" />
+      <Button layoutX="774.0" layoutY="235.0" mnemonicParsing="false" onAction="#pushAdd" text="Add">
+         <font>
+            <Font name="Mongolian Baiti" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="753.0" layoutY="412.0" mnemonicParsing="false" onAction="#pushRemove" text="Remove">
+         <font>
+            <Font name="Mongolian Baiti" size="14.0" />
+         </font>
+      </Button>
+      <HBox alignment="CENTER_RIGHT" layoutX="620.0" layoutY="449.0" prefHeight="32.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#pushSave" prefWidth="60.0" text="Save">
+               <font>
+                  <Font name="Mongolian Baiti" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#pushCancel" prefWidth="60.0" text="Cancel">
+               <font>
+                  <Font name="Mongolian Baiti" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Label layoutX="61.0" layoutY="49.0" text="Modify Product">
+         <font>
+            <Font name="Mongolian Baiti" size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="378.0" layoutY="53.0" mnemonicParsing="false" onAction="#pushSearchPart" text="Search" />
+   </children>
+</AnchorPane>

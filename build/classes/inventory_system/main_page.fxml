@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory_system.main_page_controller">
+   <children>
+      <Label alignment="TOP_CENTER" layoutX="7.0" layoutY="22.0" prefHeight="35.0" prefWidth="986.0" text="Inventory Management System">
+         <font>
+            <Font name="Mongolian Baiti" size="24.0" />
+         </font>
+      </Label>
+      <HBox alignment="TOP_CENTER" layoutX="7.0" layoutY="102.0" prefHeight="310.0" prefWidth="986.0" spacing="20.0">
+         <children>
+            <AnchorPane prefHeight="298.0" prefWidth="389.0">
+               <children>
+                  <Label layoutX="6.0" layoutY="6.0" prefHeight="28.0" prefWidth="177.0" text="Parts">
+                     <font>
+                        <Font name="Mongolian Baiti" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="searchPartBtn" layoutX="169.0" layoutY="8.0" mnemonicParsing="false" onAction="#pushSearchPart" text="Search">
+                     <font>
+                        <Font name="Mongolian Baiti" size="12.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="searchPart" layoutX="240.0" layoutY="8.0" prefHeight="25.0" prefWidth="159.0" />
+                  <TableView fx:id="partsTable" layoutY="49.0" prefHeight="213.0" prefWidth="408.0">
+                    <columns>
+                      <TableColumn fx:id="partIDColumn" prefWidth="75.0" text="Part ID" />
+                      <TableColumn fx:id="partNameColumn" prefWidth="96.0" text="Part Name" />
+                        <TableColumn fx:id="inventoryColumn" prefWidth="97.0" text="Inventory Level" />
+                        <TableColumn fx:id="priceColumn" prefWidth="133.0" text="Price/Unit" />
+                    </columns>
+                  </TableView>
+                  <HBox alignment="CENTER_RIGHT" layoutY="269.0" prefHeight="41.0" prefWidth="408.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="addPartBtn" mnemonicParsing="false" onAction="#pushAddPart" prefWidth="80.0" text="Add">
+                           <font>
+                              <Font name="Mongolian Baiti" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="modifyPartBtn" mnemonicParsing="false" onAction="#pushModifyPart" prefWidth="80.0" text="Modify">
+                           <font>
+                              <Font name="Mongolian Baiti" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="deletePartButton" mnemonicParsing="false" onAction="#pushDeletePart" prefWidth="80.0" text="Delete">
+                           <font>
+                              <Font name="Mongolian Baiti" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </AnchorPane>
+            <AnchorPane prefHeight="298.0" prefWidth="389.0">
+               <children>
+                  <Label layoutX="8.0" layoutY="8.0" prefHeight="28.0" prefWidth="177.0" text="Products">
+                     <font>
+                        <Font name="Mongolian Baiti" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="searchProductBtn" layoutX="177.0" layoutY="10.0" mnemonicParsing="false" onAction="#pushSearchProduct" text="Search">
+                     <font>
+                        <Font name="Mongolian Baiti" size="12.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="searchProduct" layoutX="240.0" layoutY="10.0" prefHeight="25.0" prefWidth="159.0" />
+                  <TableView fx:id="productsTable" layoutY="50.0" prefHeight="213.0" prefWidth="405.0">
+                     <columns>
+                        <TableColumn fx:id="partIDColumn2" prefWidth="75.0" text="Product ID" />
+                        <TableColumn fx:id="partNameColumn2" prefWidth="96.0" text="Product Name" />
+                        <TableColumn fx:id="inventoryColumn2" prefWidth="97.0" text="Inventory Level" />
+                        <TableColumn fx:id="priceColumn2" prefWidth="133.0" text="Price/Unit" />
+                     </columns>
+                  </TableView>
+                  <HBox alignment="CENTER_RIGHT" layoutX="-1.0" layoutY="269.0" prefHeight="41.0" prefWidth="408.0" spacing="20.0">
+                     <children>
+                        <Button fx:id="addProductBtn" mnemonicParsing="false" onAction="#pushAddProduct" prefWidth="80.0" text="Add">
+                           <font>
+                              <Font name="Mongolian Baiti" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#pushModifyProduct" prefWidth="80.0" text="Modify">
+                           <font>
+                              <Font name="Mongolian Baiti" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#pushDeleteProduct" prefWidth="80.0" text="Delete">
+                           <font>
+                              <Font name="Mongolian Baiti" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <Button layoutX="907.0" layoutY="448.0" mnemonicParsing="false" onAction="#pushExit" prefHeight="25.0" prefWidth="52.0" text="Exit">
+         <font>
+            <Font name="Mongolian Baiti" size="12.0" />
+         </font>
+      </Button>
+      <Label fx:id="errorLabel" layoutX="71.0" layoutY="440.0" prefHeight="17.0" prefWidth="310.0" text="Label">
+         <font>
+            <Font name="Mongolian Baiti" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
